@@ -1,27 +1,24 @@
+// src/App.js
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { AuthProvider } from './context/AuthContext';
-import { PostProvider } from './context/PostContext';
-import Home from './pages/Home';
-import LoginPage from './pages/LoginPage';
-import RegisterPage from './pages/Registerpage';
-import PostsPage from './pages/PostsPage';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Login from './components/Login';
+import Register from './components/Register';
+import Home from './components/Home';
+import CreatePost from './components/CreatePost';
 
 const App = () => {
-    return (
-        <AuthProvider>
-            <PostProvider>
-                <Router>
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/login" element={<LoginPage />} />
-                        <Route path="/register" element={<RegisterPage />} />
-                        <Route path="/posts" element={<PostsPage />} />
-                    </Routes>
-                </Router>
-            </PostProvider>
-        </AuthProvider>
-    );
+  return (
+    <Router>
+      <div>
+        <Routes>
+          <Route path="/" element={<Home />} />  {/* Home page */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/create-post" element={<CreatePost />} />  {/* Create Post page */}
+        </Routes>
+      </div>
+    </Router>
+  );
 };
 
 export default App;
