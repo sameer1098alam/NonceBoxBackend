@@ -1,3 +1,4 @@
+
 const express = require('express');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db'); // Database connection
@@ -22,6 +23,10 @@ app.use(bodyParser.json()); // Parse incoming JSON requests
 // Routes
 app.use('/api/auth', authRoutes); // Authentication routes
 app.use('/api/posts', postRoutes); // Post CRUD routes
+
+//deployments
+
+
 
 // Start server
 const PORT = process.env.PORT || 5000;
